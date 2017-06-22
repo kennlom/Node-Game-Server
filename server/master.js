@@ -5,14 +5,14 @@
  *
  */
 
-var net 		= require('net');				// Net socket library
-var handler		= require('./lib/handler');		// Incoming data handler
-var broadcast	= require('./lib/broadcast');
-var config 		= require('./lib/config');
+var net         = require('net');               // Net socket library
+var handler     = require('./lib/handler');     // Incoming data handler
+var broadcas    = require('./lib/broadcast');
+var config      = require('./lib/config');
 
 var master = new function()
 {
-	var self = this;
+    var self = this;
 
     this.ids            = 0;
     this.broadcast      = new broadcast();
@@ -240,13 +240,13 @@ var master = new function()
 		 */
 		this.server.on('connection', function(socket){
 
-			socket.isHost 				= false;
-			socket.handshakeCompleted 	= false;
-		    socket.buffer 				= '';	// Incoming data buffer
-		    socket.bufferSize 			= 32;
-		    socket.connectedTime 		= new Date() / 1000;
-		    socket.id 					= ++ self.ids;
-		    socket.setNoDelay(true);
+            socket.isHost 				= false;
+            socket.handshakeCompleted 	= false;
+            socket.buffer 				= '';	// Incoming data buffer
+            socket.bufferSize 			= 32;
+            socket.connectedTime 		= new Date() / 1000;
+            socket.id 					= ++ self.ids;
+            socket.setNoDelay(true);
 
 
 		    // Until we can authenticate and verify this connection,
