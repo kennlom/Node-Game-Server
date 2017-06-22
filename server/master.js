@@ -14,16 +14,16 @@ var master = new function()
 {
 	var self = this;
 
-	this.ids 			= 0;
-	this.broadcast 		= new broadcast();
-	this.server 		= net.createServer();		// Create new socket server
-	this.uptime 		= 0; 						// Server uptime timestamp
-	this.connections	= {};						// Unverified connections
-	this.hosts 			= {};						// Connected / verified host servers
-	this.admins 		= {}; 						// Connected / verified administrators
-	this.games 			= {};						// Active tables
-	this.players 		= 0;						// Players online
-	this.handler 		= null;
+    this.ids            = 0;
+    this.broadcast      = new broadcast();
+    this.server         = net.createServer();		// Create new socket server
+    this.uptime         = 0; 						// Server uptime timestamp
+    this.connections    = {};						// Unverified connections
+    this.hosts          = {};						// Connected / verified host servers
+    this.admins         = {}; 						// Connected / verified administrators
+    this.games          = {};						// Active tables
+    this.players        = 0;						// Players online
+    this.handler        = null;
 
 	/**
 	 * Initialize
@@ -176,7 +176,7 @@ var master = new function()
 			};
 
 			console.log('Returning game data');
-			socket.write(JSON.stringify({"event":"GetGames", "games":self.games}) + '\n');			
+			socket.write(JSON.stringify({"event":"GetGames", "games":self.games}) + '\n');
 		}
 	};
 
@@ -284,7 +284,7 @@ var master = new function()
 	{
 		var now = new Date() / 1000;
 		//console.log( Object.keys(self.connections).length, 'pending connections');
-		
+
 		Object.keys(self.connections).forEach(function(id){
 			// If the socket does not get verified within
 			// 30 seconds then disconnect it
