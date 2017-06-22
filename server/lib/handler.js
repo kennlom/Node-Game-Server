@@ -19,9 +19,9 @@ var controller = function()
 	// List of event listeners
 	// The controller will call the event listener when the event triggered.
 	// If no listeners are available, the event will be lost.
-	this.listeners 			= {};
-	this.connection 		= null;
-	this.reconnectTimeout 	= 3000;	// Reconnection timeout for lost connection
+	this.listeners			= {};
+	this.connection			= null;
+	this.reconnectTimeout	= 3000;	// Reconnection timeout for lost connection
 
 
 	/**

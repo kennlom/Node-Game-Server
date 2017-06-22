@@ -15,7 +15,7 @@
 var WebSocketServer = require('ws').Server;
 var net 			= require('net');			// Net socket library
 var handler			= require('./lib/handler');	// Incoming data handler
-var master 			= require('./lib/master'); 	// Master server
+var master 			= require('./lib/master');	// Master server
 var config 			= require('./lib/config');
 
 /**
@@ -25,10 +25,10 @@ var admin = new function()
 {
 	var self = this;
 
-	this.ids 			= 0;
-	this.server 		= null;						// Socket server
-	this.connections	= {};						// Unverified connections
-	this.handler 		= new handler();
+	this.ids			= 0;
+	this.server			= null;				// Socket server
+	this.connections	= {};				// Unverified connections
+	this.handler		= new handler();
 
 
 	/**
@@ -63,13 +63,13 @@ var admin = new function()
 		// and making the connection to the master server.
 		// Initialize incoming data event handlers
 		var listeners = {
-			'connected': 			self.onConnect,
-			'admin_authorization': 	self.onAdminAuthorize,
-			'onAuthorize': 			self.onAuthorize,
-			'GetGames': 			self.onGetGames,
-			'GetPlayers': 			self.onGetPlayers,
-			'GetHosts': 			self.onGetHosts,
-			'GetUptime': 			self.onGetUptime,
+			'connected':			self.onConnect,
+			'admin_authorization':	self.onAdminAuthorize,
+			'onAuthorize':			self.onAuthorize,
+			'GetGames':				self.onGetGames,
+			'GetPlayers':			self.onGetPlayers,
+			'GetHosts':				self.onGetHosts,
+			'GetUptime':			self.onGetUptime,
 		};
 
 		/**
@@ -77,7 +77,7 @@ var admin = new function()
 		 */
 		self.server.on('connection', function(socket){
 			
-			socket.buffer 				= '';
+			socket.buffer				= '';
 			socket.handshakeCompleted	= false;
 			socket.isRelaying			= false;
 

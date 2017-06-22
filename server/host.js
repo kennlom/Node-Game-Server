@@ -7,7 +7,7 @@
 
 var net 		= require('net');			// Net socket library
 var handler		= require('./lib/handler');	// Incoming data handler
-var master 		= require('./lib/master'); 	// Master server
+var master 		= require('./lib/master');	// Master server
 var config 		= require('./lib/config');
 
 /**
@@ -17,14 +17,14 @@ var host = new function()
 {
 	var self = this;
 
-	this.ids 			= 0;
-	this.master 		= null; 					// Socket connection to master server
-	this.server 		= null;						// Socket server
+	this.ids			= 0;
+	this.master			= null;						// Socket connection to master server
+	this.server			= null;						// Socket server
 	this.connections	= {};						// Unverified connections
-	this.games 			= {};						// Connected / verified game servers
-	this.players 		= 0;						// Players online [this host instance]
-	this.totalPlayers 	= 0; 						// All players online [all host instances]
-	this.handler 		= new handler(this);
+	this.games			= {};						// Connected / verified game servers
+	this.players		= 0;						// Players online [this host instance]
+	this.totalPlayers	= 0;						// All players online [all host instances]
+	this.handler		= new handler(this);
 
 
 	/**
@@ -141,7 +141,7 @@ var host = new function()
 	this.initServerData = function()
 	{
 		// Reset all server data (just in case we lost connection)
-		self.games 		= {};
+		self.games		= {};
 		self.players	= 0;
 
 		/*

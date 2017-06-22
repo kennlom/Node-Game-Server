@@ -1,6 +1,6 @@
-var net 	= require('net');
-var config 	= require('./config');
-var handler = require('./handler');
+var net		= require('net');
+var config	= require('./config');
+var handler	= require('./handler');
 
 
 module.exports = function()
@@ -15,11 +15,11 @@ var controller = function()
 {
 	var self = this;
 
-	this.buffer 			= '';	// Incoming data buffer
-	this.socket 			= null;
-	this.connection 		= null;
-	this.reconnectTimeout 	= 0;	// Reconnection timeout for lost connection
-	this.handler 			= new handler();
+	this.buffer				= '';	// Incoming data buffer
+	this.socket				= null;
+	this.connection			= null;
+	this.reconnectTimeout	= 0;	// Reconnection timeout for lost connection
+	this.handler			= new handler();
 
 	/**
 	 * Connect to master server
@@ -32,8 +32,8 @@ var controller = function()
 		self.reconnectTimeout = reconnectTimeout;
 
 		// Create new socket connection
-		self.connection 		= new net.Socket();
-		self.connection.buffer 	= '';
+		self.connection			= new net.Socket();
+		self.connection.buffer	= '';
 
 		// Add a 'close' event handler for the socket
 		self.connection.on('close', function() {

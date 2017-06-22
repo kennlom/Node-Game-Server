@@ -16,13 +16,13 @@ var master = new function()
 
     this.ids            = 0;
     this.broadcast      = new broadcast();
-    this.server         = net.createServer();		// Create new socket server
-    this.uptime         = 0; 						// Server uptime timestamp
-    this.connections    = {};						// Unverified connections
-    this.hosts          = {};						// Connected / verified host servers
-    this.admins         = {}; 						// Connected / verified administrators
-    this.games          = {};						// Active tables
-    this.players        = 0;						// Players online
+    this.server         = net.createServer();       // Create new socket server
+    this.uptime         = 0;                        // Server uptime timestamp
+    this.connections    = {};                       // Unverified connections
+    this.hosts          = {};                       // Connected / verified host servers
+    this.admins         = {};                       // Connected / verified administrators
+    this.games          = {};                       // Active tables
+    this.players        = 0;                        // Players online
     this.handler        = null;
 
 	/**
