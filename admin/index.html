@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="./js/config.js"></script>
+	<script src="./js/handler.js"></script>
+	<script src="./js/controller.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			var c = new controller();
+			c.init().listen().run();
+		});
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<title>Beba Poker | Admin</title>
+
+
+</head>
+<body>
+
+<table class="container">
+<tr>
+	<td rowspan="2" id="logo">
+			&spades; flop<span style="color:#fff;font-weight:bold;">me</span>
+	</td>
+	<td class="title" width="14%">&#x25BE; Status</td>
+	<td class="title" width="18%">&#x25BE; Master</td>
+	<td class="title">&#x25BE; Host</td>
+	<td class="title">&#x25BE; Games</td>
+	<td class="title">&#x25BE; Players</td>
+	<td class="title">&#x25BE; Hands/hr</td>
+	<td class="title">&#x25BE; Players Waiting</td>
+</tr>
+<tr>
+	<td class="status"><div id="connectionIndicator"></div><a href="javascript:" id="connection" title="Click to connect / disconnect">Disconnected</a></td>
+	<td class="status">Online: <span id="uptime">--</span></td>
+	<td class="status" id="hosts">--</td>
+	<td class="status" id="games">--</td>
+	<td class="status" id="players">--</td>
+	<td class="status">--</td>
+	<td class="status">--</td>
+</tr>
+</table>
+
+
+<table id="game-selector">
+<thead>
+	<tr>
+		<th data-game="1/2NLHE">1/2 NL Holdem</th>
+		<th data-game="2/5NLHE" class="active">2/5 NL Holdem</th>
+		<th data-game="5/10NLHE">5/10 NL Holdem</th>
+		<th data-game="10/20NLHE">10/20 NL Holdem</th>
+		<th data-game="25/50NLHE">25/50 NL Holdem</th>
+	</tr>
+</thead>
+</table>
+
+<table id="game-table" cellspacing="0">
+<thead>
+	<tr>
+		<th>Table</th>
+		<th>Game</th>
+		<th>IP</th>
+		<th>Port</th>
+		<th>Players</th>
+		<th>Game Speed</th>
+		<th>Avg. Pot</th>
+		<th></th>
+	</tr>
+</thead>
+<tbody>
+<tr>
+	<td colspan="7"> No results </td>
+</tr>
+</tbody>
+</table>
+
+<div id="footer">
+Copyright &copy; 2015 Beba, Inc. All rights reserved.<br>
+flopme poker admin v1.0
+</div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	background: #4D525C; /*#2b303b;*/
+	color: #c0c5ce;
+	margin: 8;
+}
+a {
+	text-decoration: none;
+	border-bottom: 1px dotted #ffffff;
+	color: #ffffff;
+}
+
+#logo {
+	font-size: 18px;
+	color: #CACBCF;
+	width:50px;
+	padding-left: 16px;
+}
+
+#connectionIndicator {
+	width: 12px;
+	height: 12px;
+	background: red;
+	display: inline-block;
+	margin-right: 4px;
+	margin-bottom: -2px;
+
+	border:0px dotted #fff;
+
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+}
+
+.title {
+	font-size: 10px;
+	color: #ABB6C2;
+	white-space: nowrap;
+	padding: 2px 6px;
+	padding-top: 6px;
+}
+.status {
+	font-size: 13px;
+	color: #000000;
+	width:10%;
+	white-space: nowrap;
+	text-align: left;
+	padding: 2px 6px;
+	padding-bottom: 8px;
+}
+
+#game-selector {
+	width: 1000px;
+	border-collapse: collapse;
+	display: none;
+}
+#game-selector th {
+	padding: 10px 12px;
+	font-size: 12px;
+	font-weight: normal;
+	cursor: pointer
+}
+
+#game-selector th.active {
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #efefef;
+	color: #2B303B;
+	
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+}
+
+#game-table {
+	width: 1000px;
+	background: #efefef;
+	padding: 10px;
+	border-bottom: 4px solid green;
+	display: none;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+}
+
+#game-table thead th {
+	font-size:11px;
+	color:#333;
+	text-align: left;
+	background: #efefef;
+}
+
+#game-table td {
+	padding:2px;
+	font-size: 10px;
+	font-weight: normal;
+	color:#000;
+	border-bottom: 1px solid #dedede;
+}
+
+#game-table tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+
+table.container {
+	width: 1000px;
+	background: #141C2D;
+	margin-bottom: 20px;
+	border-top: 3px solid orange;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+table.container td.status {
+	color: #c0c5ce;
+	color: #ffffff;
+}
+
+#footer {
+	font-size:10px;
+	padding:8px;
+	margin-top: 10px;
+	color:#888888;
+}

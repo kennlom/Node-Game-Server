@@ -1,0 +1,38 @@
+Game Server Structure
+===================================================================
+
+1) Master Server, port: 9099
+	- Keep all active connections
+	- Distribute connections among other child-pooled servers
+
+	Responsibility:
+	- Maintain list of games
+	- Maintain list of players
+	- Maintain list of host servers
+
+2) Host Servers
+	Responsibility:
+	- Maintain list of game servers (used to host game tables)
+	- Request game list from master server on an interval
+	- Distribute list of games to players connected to the server upon request
+	- Maintain player connections
+
+3) Game Servers (aka: table/dealer servers)
+	Responsibility:
+	- Maintain each table game and players connection
+	- Report game status to master server (completed | abandoned | etc)
+	- Open / close games upon request from host server
+	- Verify player by communication with master server via player guid key
+	- Viewed games (all players on table + guests) are served from this server
+
+4) All servers
+	Responsibility:
+	- Address all connections, games, players to file in case a reboot is required
+	- Upon reboot, restart all games, wait for players connection, resume all game
+	- Server is expected to lose players connection due to volatile connections
+	- A server reboot treats all players as disconnected and resume games as if they player themselves were disconnected 
+
+Note)
+	- No automatic scaling, servers are preset with max games/connections
+	- Once max games or connections are reached, users will be alerted to wait
+	- Admin must spin up new servers and start game to accommodate players as necessary
