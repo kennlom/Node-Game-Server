@@ -12,7 +12,7 @@
  * -https://github.com/einaros/ws
  *
  */
-var WebSocketServer = require('ws').Server;
+var WebSocketServer	= require('ws').Server;
 var net 			= require('net');			// Net socket library
 var handler			= require('./lib/handler');	// Incoming data handler
 var master 			= require('./lib/master');	// Master server
